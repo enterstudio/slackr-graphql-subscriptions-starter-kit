@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "start": "webpack-dev-server --progress --profile --colors",
-    "lint": "eslint --ext js --ext jsx src || exit 0"
+    "lint": "eslint --ext js --ext jsx src || exit 0",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,8 @@
     "react-dom": "^15.4.2",
     "react-router": "^3.0.0",
     "sass-loader": "^4.0.2",
-    "subscriptions-transport-ws": "^0.5.5-alpha.0"
+    "subscriptions-transport-ws": "^0.5.5-alpha.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "6.17.0",
@@ -52,5 +55,6 @@
     "webpack": "1.13.2",
     "webpack-cleanup-plugin": "^0.4.1",
     "webpack-dev-server": "1.16.2"
-  }
+  },
+  "snyk": true
 }
